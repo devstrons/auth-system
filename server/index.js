@@ -10,8 +10,8 @@ connection(DB_URI);
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
-app.use(cors());
-
+// app.use(cors());
+app.options('*', cors())
 // user routes
 app.use('/user', UserRoute);
 

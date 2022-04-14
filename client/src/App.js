@@ -5,7 +5,12 @@ import Login from "./components/login/login";
 import Register from "./components/register/register";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-axios.defaults.baseURL = "http://localhost:5000";
+axios.defaults.baseURL = "https://auth-sys-js.herokuapp.com/";
+axios.defaults.headers = {
+  'Access-Control-Allow-Origin': '*',
+  'Content-Type': 'application/json',
+}
+axios.defaults.withCredentials = true;
 
 function App() {
   return (
