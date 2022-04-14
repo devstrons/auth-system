@@ -19,7 +19,9 @@
     "start": "node .",
     "dev": "nodemon -r dotenv/config ."
   },
-  "keywords": [],
+  "keywords": [
+    "heroku"
+  ],
   "author": "",
   "license": "ISC"
 }
