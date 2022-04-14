@@ -10,7 +10,7 @@ axios.defaults.headers = {
   'Access-Control-Allow-Origin': '*',
   'Content-Type': 'application/json',
 }
-axios.defaults.withCredentials = true;
+// axios.defaults.withCredentials = true;
 
 function App() {
   return (
