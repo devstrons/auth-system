@@ -1,15 +1,15 @@
+import "./styles.css";
 import React from "react";
 import { useHistory } from "react-router-dom";
-import "./homepage.css";
 import { useEffect } from "react";
 
 const Homepage = () => {
   const history = useHistory();
 
   useEffect(() => {
-    const token = localStorage.getItem("token")
-    if(!token) history.push("/login");
-  }, []);
+    const token = localStorage.getItem("token");
+    if (!token) history.push("/login");
+  }, [history]);
 
   return (
     <div className="homepage">

@@ -1,15 +1,15 @@
 import "./App.css";
 import axios from "axios";
-import Homepage from "./components/homepage/homepage";
-import Login from "./components/login/login";
-import Register from "./components/register/register";
+import Homepage from "./components/homepage"
+import Login from "./components/login"
+import Register from "./components/register"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-axios.defaults.baseURL = "https://auth-sys-js.herokuapp.com/";
+axios.defaults.baseURL = "https://auth-sys-js.herokuapp.com";
 axios.defaults.headers = {
-  'Access-Control-Allow-Origin': '*',
-  'Content-Type': 'application/json',
-}
+  // "Access-Control-Allow-Origin": "*",
+  "Content-Type": "application/json"
+};
 // axios.defaults.withCredentials = true;
 
 function App() {
