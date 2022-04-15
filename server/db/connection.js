@@ -9,4 +9,5 @@ export default function connection(DB_URI) {
         .catch((err) =>
             console.log("Error while connecting to database", err)
         );
-}
+    }
+    

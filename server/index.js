@@ -13,10 +13,12 @@ app.use(express.urlencoded({extended: true}));
 
 console.log(__DEV__)
 // __DEV__ ? "http://localhost:3000" : "https://myclientapp.com"
-app.use(cors({
-    origin: "*",
-    credentials: true,
-}));
+// app.use(cors({
+//     // origin: "*"
+//     // credentials: true,
+// }));
+
+app.use(cors());
 
 // user routes
 app.use('/user', UserRoute);
