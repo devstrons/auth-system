@@ -5,7 +5,7 @@ import Login from "./components/login"
 import Register from "./components/register"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-axios.defaults.baseURL = "https://auth-sys-js.herokuapp.com";
+axios.defaults.baseURL = "https://auth-sys-server.herokuapp.com";
 axios.defaults.headers = {
   // "Access-Control-Allow-Origin": "*",
   "Content-Type": "application/json"
