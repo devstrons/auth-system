@@ -1,5 +1,5 @@
 <p align="center">
-    <img style="margin: 0 0 0 60px" src="assets/img/auth-sys.png" alt="newsXplorer"/>
+    <img style="width: 100%" src="web/public/assets/img/auth-sys.png" alt="newsXplorer"/>
 </p>
 <h2 align="center">Authentication System with bycrypt & JWT in JavaScript</h2>
 <div align="center">
