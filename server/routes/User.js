@@ -9,9 +9,9 @@ const router = Router();
 // User signup route
 router.post("/signup", async (req, res) => {
   try {
-    const { name, email, password } = req.body;
+    const { name, email, phone, password } = req.body;
 
-    if (!name || !email || !password) {
+    if (!name || !email || !phone || !password) {
       return res.status(422).json({ error: "Please fill all fields" });
     }
 
@@ -23,13 +23,12 @@ router.post("/signup", async (req, res) => {
 
     const hashpassword = await bcrypt.hash(password, 12).catch(console.log);
 
-    const user = new User({
+    const user = user.create({
       name,
       email,
+      phone,
       password: hashpassword,
     });
-
-    await user.save();
 
     res.status(201).json({ message: "User registered successfully" });
   } catch (err) {
@@ -40,8 +39,15 @@ router.post("/signup", async (req, res) => {
 // User signin route
 router.post("/signin", async (req, res) => {
   try {
-    const { email, password } = req.body;
-    const userExists = await User.findOne({ email });
+    const { email, phone, password } = req.body;
+
+    if ((!email || !phone) || !password) {
+      return res.status(422).json({ error: "Please fill all fields" });
+    }
+
+    let userExists = await User.findOne({ email });
+    if (!userExists)
+      userExists = await User.findOne({ phone });
     const validPassword = await bcrypt.compare(password, userExists.password);
 
     if (!userExists || !validPassword) {
